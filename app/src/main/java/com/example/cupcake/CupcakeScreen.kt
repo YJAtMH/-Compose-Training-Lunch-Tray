@@ -80,13 +80,10 @@ fun CupcakeAppBar(
 
 @Composable
 fun CupcakeApp(modifier: Modifier = Modifier, viewModel: OrderViewModel = viewModel()){
-    // TODO: Create NavController
     val navController = rememberNavController()
 
-    // TODO: Get current back stack entry
     val backStackEntry by navController.currentBackStackEntryAsState()
 
-    // TODO: Get the name of the current screen
     val currentScreen = CupcakeScreen.valueOf(
         backStackEntry?.destination?.route ?: CupcakeScreen.Start.name
     )
@@ -97,7 +94,6 @@ fun CupcakeApp(modifier: Modifier = Modifier, viewModel: OrderViewModel = viewMo
                 currentScreen = currentScreen,
                 canNavigateBack = navController.previousBackStackEntry != null,
                 navigateUp = {
-                    /* TODO: implement back navigation */
                     navController.navigateUp()
                 }
             )
@@ -105,7 +101,6 @@ fun CupcakeApp(modifier: Modifier = Modifier, viewModel: OrderViewModel = viewMo
     ) { innerPadding ->
         val uiState by viewModel.uiState.collectAsState()
 
-        // TODO: add NavHost
         NavHost(
             navController = navController,
             startDestination = CupcakeScreen.Start.name,

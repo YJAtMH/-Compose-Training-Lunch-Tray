@@ -44,9 +44,7 @@ import com.example.cupcake.ui.components.FormattedPriceLabel
 @Composable
 fun OrderSummaryScreen(
     orderUiState: OrderUiState,
-    // TODO: add onCancelButtonClicked
     onCancelButtonClicked: () -> Unit = {},
-    // TODO: add onSendButtonClicked
     onSendButtonClicked: (String, String) -> Unit = { _: String, _: String -> },
     modifier: Modifier = Modifier
 ){
@@ -93,7 +91,6 @@ fun OrderSummaryScreen(
         Button(
             modifier = Modifier.fillMaxWidth(),
             onClick = {
-                /* TODO: handle send button */
                 onSendButtonClicked(newOrder, orderSummary)
             }
         ) {
@@ -101,7 +98,6 @@ fun OrderSummaryScreen(
         }
         OutlinedButton(
             modifier = Modifier.fillMaxWidth(),
-            /* TODO: handle cancel button */
             onClick = onCancelButtonClicked
         ) {
             Text(stringResource(R.string.cancel))
